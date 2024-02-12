@@ -2,6 +2,7 @@
 
 import { NewNoteCard } from "@/components/new-note-card";
 import { NoteCard } from "@/components/note-card";
+import { Skeleton } from "@nextui-org/react";
 import { useAnimation, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -71,11 +72,12 @@ export default function Home() {
 					loading ? "opacity-[0.5]" : "opacity-[1]"
 				}`}
 			>
-				<Image
+				<motion.img
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5 }}
 					src="/logo.png"
 					alt="NLW Expert"
-					width={125}
-					height={125}
 				/>
 
 				<form className="w-full" onSubmit={(event) => event.preventDefault()}>
