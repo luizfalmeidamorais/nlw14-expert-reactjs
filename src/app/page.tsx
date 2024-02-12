@@ -3,6 +3,7 @@
 import { NewNoteCard } from "@/components/new-note-card";
 import { NoteCard } from "@/components/note-card";
 import { useAnimation, motion } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface Note {
@@ -70,7 +71,12 @@ export default function Home() {
 					loading ? "opacity-[0.5]" : "opacity-[1]"
 				}`}
 			>
-				<img src="/logo.png" alt="NLW Expert" />
+				<Image
+					src="/logo.png"
+					alt="NLW Expert"
+					width={125}
+					height={125}
+				/>
 
 				<form className="w-full" onSubmit={(event) => event.preventDefault()}>
 					<input
